@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>GARUDA 🇮🇳 | Personal AI Mentor & Life Operating System</title>
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#0B0F19">
+  <meta name="description" content="Personal AI Mentor, UPSC & Indian Army Officer Preparation, SSB Coach, IT Career & Fitness OS">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="GARUDA OS">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/jpeg" href="./assets/icons/garuda_icon.jpg">
+  <link rel="apple-touch-icon" href="./assets/icons/garuda_icon.jpg">
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Application Stylesheets -->
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/modules.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+  <div id="app-root">
+    <!-- National Tricolor Top Accent Line -->
+    <div class="tricolor-stripe"></div>
+
+    <!-- Sticky App Header -->
+    <header class="app-header">
+      <div class="brand-section" id="nav-brand-home">
+        <img src="./assets/icons/garuda_icon.jpg" alt="GARUDA Emblem" class="brand-emblem">
+        <div class="brand-info">
+          <div class="brand-title">
+            GARUDA <span class="badge-flag">🇮🇳</span>
+          </div>
+          <div class="brand-tagline">Life & Career Operating System</div>
+        </div>
+      </div>
+
+      <!-- Center Operational Ambition Indicator -->
+      <div class="header-center-mission">
+        <div class="mission-indicator"></div>
+        <span class="mission-text">TARGET: 🇮🇳 INDIAN ARMY OFFICER & UPSC</span>
+      </div>
+
+      <!-- Header Actions: Auth, Streak, Theme Toggle, Install PWA, Briefing -->
+      <div class="header-actions">
+        <div id="header-auth-badge"></div>
+
+        <div class="streak-pill" id="header-streak-badge" title="Consecutive Discipline Streak">
+          🔥 <span id="header-streak-val">8</span> Days
+        </div>
+
+        <button class="header-btn" id="btn-morning-briefing" title="Morning 06:00 Briefing">
+          🌅
+        </button>
+
+        <button class="header-btn" id="btn-theme-toggle" title="Toggle Tactical Night / Daylight View">
+          🌓
+        </button>
+
+        <button class="header-btn" id="btn-header-settings" title="Cadet Preferences & Schedule">
+          ⚙️
+        </button>
+
+        <button class="header-btn" id="btn-pwa-install" style="display: none;" title="Install GARUDA PWA to Home Screen">
+          📥
+        </button>
+      </div>
+    </header>
+
+    <!-- App Body: Sidebar (Desktop) + Main View Container -->
+    <div class="app-body">
+      <!-- Desktop Sidebar Navigation -->
+      <aside class="app-sidebar">
+        <div class="nav-category">Command Core</div>
+        <a href="#home" class="nav-item active" data-view="home">
+          <span class="nav-icon">🏠</span> Today's Mission
+        </a>
+        <a href="#mentor" class="nav-item" data-view="mentor">
+          <span class="nav-icon">🤖</span> AI Mentor Core
+          <span class="nav-badge">ACTIVE</span>
+        </a>
+        <a href="#action-now" class="nav-item" id="sidebar-action-now" style="color: var(--accent-gold); font-weight: 700;">
+          <span class="nav-icon">🎯</span> What Should I Do Now?
+        </a>
+
+        <div class="nav-category">Military & Civil Wings</div>
+        <a href="#army" class="nav-item" data-view="army">
+          <span class="nav-icon">🪖</span> Army Officer Mission
+        </a>
+        <a href="#ssb" class="nav-item" data-view="ssb">
+          <span class="nav-icon">🎖️</span> SSB Coach & Simulator
+        </a>
+        <a href="#upsc" class="nav-item" data-view="upsc">
+          <span class="nav-icon">📚</span> UPSC Academy
+        </a>
+        <a href="#fitness" class="nav-item" data-view="fitness">
+          <span class="nav-icon">💪</span> Fitness & Nutrition
+        </a>
+        <a href="#it" class="nav-item" data-view="it">
+          <span class="nav-icon">💻</span> IT Career (Java Stack)
+        </a>
+        <a href="#jobs" class="nav-item" data-view="jobs">
+          <span class="nav-icon">🏛️</span> Govt Opportunities
+        </a>
+
+        <div class="nav-category">Accountability</div>
+        <a href="#reports" class="nav-item" data-view="reports">
+          <span class="nav-icon">📊</span> Reports & Badges
+        </a>
+        <a href="#preferences" class="nav-item" data-view="preferences">
+          <span class="nav-icon">⚙️</span> Preferences
+        </a>
+        <a href="#profile" class="nav-item" data-view="profile">
+          <span class="nav-icon">👤</span> Profile & Roadmaps
+        </a>
+      </aside>
+
+      <!-- Main Dynamic View Area -->
+      <main class="app-main" id="main-view-container">
+        <!-- Rendered dynamically by app.js router -->
+      </main>
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <button class="bnav-btn active" data-view="home">
+        <span class="bnav-icon">🏠</span>
+        <span>Mission</span>
+      </button>
+
+      <button class="bnav-btn" data-view="upsc">
+        <span class="bnav-icon">📚</span>
+        <span>UPSC</span>
+      </button>
+
+      <!-- Prominent Elevated Center Action Trigger -->
+      <div class="bnav-action-center" id="bnav-action-now" title="What Should I Do Now?">
+        🎯
+      </div>
+
+      <button class="bnav-btn" data-view="army">
+        <span class="bnav-icon">🪖</span>
+        <span>Army</span>
+      </button>
+
+      <button class="bnav-btn" data-view="mentor">
+        <span class="bnav-icon">🤖</span>
+        <span>Mentor</span>
+      </button>
+    </nav>
+
+    <!-- Global "WHAT SHOULD I DO NOW?" Modal -->
+    <div id="modal-action-now" class="modal-overlay">
+      <div class="modal-sheet">
+        <div class="modal-header">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.5rem;">🎯</span>
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--accent-gold);">HIGHEST-LEVERAGE ACTION RIGHT NOW</h3>
+              <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">AI Evaluated Grounded Next Order</span>
+            </div>
+          </div>
+          <button class="header-btn" id="btn-close-action-now">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-action-now-body">
+          <!-- Populated dynamically by AIMentorEngine -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline btn-sm" id="btn-dismiss-action-now">Acknowledge</button>
+          <button class="btn btn-primary btn-sm" id="btn-execute-action-now">Execute This Action Now →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global Morning Briefing Modal -->
+    <div id="modal-briefing" class="modal-overlay">
+      <div class="modal-sheet">
+        <div class="modal-header">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.5rem;">🌅</span>
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--accent-gold);" id="briefing-greeting">GOOD MORNING 🇮🇳</h3>
+              <span style="font-size: 0.72rem; color: var(--text-muted);" id="briefing-date">Date</span>
+            </div>
+          </div>
+          <button class="header-btn" id="btn-close-briefing">&times;</button>
+        </div>
+        <div class="modal-body" id="briefing-content-body"></div>
+        <div class="modal-footer">
+          <button class="btn btn-primary btn-sm" id="btn-dismiss-briefing">Battle Orders Accepted. Let's Execute 🇮🇳</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Onboarding / Profile Setup Wizard Modal -->
+    <div id="modal-onboarding" class="modal-overlay">
+      <div class="modal-sheet" style="max-width: 720px;">
+        <div class="modal-header">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.5rem;">⚙️</span>
+            <div>
+              <h3 style="font-size: 1.15rem;">Candidate Profile & Mission Calibration</h3>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">20-Point Multi-Pillar Operating Calibration</span>
+            </div>
+          </div>
+          <button class="header-btn" id="btn-close-onboarding">&times;</button>
+        </div>
+        <div class="modal-body" id="onboarding-wizard-body"></div>
+        <div class="modal-footer">
+          <button class="btn btn-outline btn-sm" id="btn-onboarding-prev" style="display: none;">← Previous</button>
+          <button class="btn btn-primary btn-sm" id="btn-onboarding-next">Next Step →</button>
+        </div>
+      </div>
+    <!-- Authentication & Account Modal -->
+    <div id="modal-auth" class="modal-overlay">
+      <div class="modal-sheet" style="max-width: 480px;">
+        <div class="modal-header">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.4rem;">🔐</span>
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--accent-gold);">Officer Cadet Account</h3>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">IndexedDB & Database Authentication</span>
+            </div>
+          </div>
+          <button class="header-btn" id="btn-close-auth">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-auth-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main ES Module Script -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

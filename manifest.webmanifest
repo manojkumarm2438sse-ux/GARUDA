@@ -1,0 +1,55 @@
+{
+  "name": "GARUDA 🇮🇳 | Life & Career Operating System",
+  "short_name": "GARUDA",
+  "description": "Personal AI Mentor, UPSC & Indian Army Officer Preparation, SSB Coach, IT Career & Fitness OS",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0B0F19",
+  "theme_color": "#0B0F19",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./assets/icons/garuda_icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icons/garuda_icon.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "What Should I Do Now?",
+      "short_name": "Next Action",
+      "url": "./index.html#action-now",
+      "description": "AI analysis of your highest priority action right now"
+    },
+    {
+      "name": "Today's Mission",
+      "short_name": "Mission",
+      "url": "./index.html#home",
+      "description": "View daily battle orders and completion progress"
+    },
+    {
+      "name": "UPSC Preparation",
+      "short_name": "UPSC",
+      "url": "./index.html#upsc",
+      "description": "Topics, MCQs, PYQs, and Mains answer writing"
+    },
+    {
+      "name": "SSB Preparation",
+      "short_name": "SSB",
+      "url": "./index.html#ssb",
+      "description": "PPDT, WAT, SRT, GD and Interview practice"
+    },
+    {
+      "name": "Fitness Tracker",
+      "short_name": "Fitness",
+      "url": "./index.html#fitness",
+      "description": "Log workout, Indian nutrition macros, and recovery"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+/* ==========================================================================
+   GARUDA OS - Responsive Breakpoints & Mobile Optimization
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 56px;
+    --bottom-nav-height: 64px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .app-main {
+    padding: 0.75rem 0.65rem calc(var(--bottom-nav-height) + 1rem) 0.65rem;
+  }
+
+  .card {
+    padding: 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .action-now-box {
+    padding: 1rem;
+  }
+
+  .action-now-title {
+    font-size: 1.15rem;
+  }
+
+  .hero-motto {
+    font-size: 1.05rem;
+  }
+
+  .modal-sheet {
+    max-height: 95vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .lesson-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wat-word {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .app-main {
+    padding: 1rem 1.25rem calc(var(--bottom-nav-height) + 1.25rem) 1.25rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app-sidebar {
+    width: 220px;
+  }
+}
+
+/* Print Styles for Daily & Weekly Reports */
+@media print {
+  .app-header, .app-sidebar, .bottom-nav, .bnav-action-center, .btn {
+    display: none !important;
+  }
+
+  body, html {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .card {
+    border: 1px solid #CCCCCC !important;
+    box-shadow: none !important;
+    background: #FFFFFF !important;
+    page-break-inside: avoid;
+  }
+}

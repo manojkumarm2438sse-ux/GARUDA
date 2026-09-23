@@ -1,0 +1,279 @@
+/* ==========================================================================
+   GARUDA OS - Specialized Module Styles (UPSC, Army, SSB, Fitness, IT, Jobs)
+   ========================================================================== */
+
+/* 1. UPSC 16-Step Lesson Flow */
+.lesson-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.step-item-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.step-item-card:hover {
+  border-color: var(--accent-gold);
+  background: var(--bg-surface-elevated);
+}
+
+.step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--accent-gold);
+  font-weight: 800;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-info h4 {
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}
+
+.step-info p {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+}
+
+/* 2. Army Officer Eligibility Matrix */
+.army-entry-card {
+  border-left: 4px solid var(--accent-olive-light);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.85rem;
+  border-top: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.army-entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.army-eligibility-badge {
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.eligibility-yes {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10B981;
+  border: 1px solid #10B981;
+}
+
+.eligibility-borderline {
+  background: rgba(245, 158, 11, 0.2);
+  color: #F59E0B;
+  border: 1px solid #F59E0B;
+}
+
+.eligibility-no {
+  background: rgba(239, 68, 68, 0.2);
+  color: #EF4444;
+  border: 1px solid #EF4444;
+}
+
+/* 3. SSB Simulator Modules */
+.ssb-ppdt-box {
+  width: 220px;
+  height: 220px;
+  border: 2px dashed var(--accent-gold);
+  border-radius: var(--radius-md);
+  margin: 1rem auto;
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: crosshair;
+}
+
+.ppdt-char-mark {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  border: 2px solid #FFFFFF;
+  background: rgba(245, 158, 11, 0.75);
+  color: #0B0F19;
+  font-size: 0.7rem;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.wat-card-display {
+  background: var(--bg-surface-elevated);
+  border: 2px solid var(--accent-gold);
+  border-radius: var(--radius-xl);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.wat-word {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+}
+
+.wat-timer-bar {
+  height: 6px;
+  background: var(--accent-gold);
+  border-radius: var(--radius-full);
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+/* 4. Fitness & Nutrition Modules */
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .nutrition-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.macro-dial-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  text-align: center;
+}
+
+.macro-dial-val {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.macro-dial-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.food-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.food-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.6rem 0.4rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.food-btn:hover {
+  border-color: var(--accent-gold);
+  background: var(--bg-surface-elevated);
+}
+
+.food-btn span {
+  font-size: 0.7rem;
+  color: var(--accent-gold);
+  margin-top: 0.2rem;
+}
+
+/* 5. IT Career Roadmap */
+.it-topic-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.5rem;
+}
+
+.it-topic-item.completed {
+  border-color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+/* 6. Government Job Radar Cards */
+.job-radar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.85rem;
+  transition: all var(--transition-fast);
+}
+
+.job-radar-card:hover {
+  border-color: var(--accent-gold);
+}
+
+.job-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.job-org-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: rgba(30, 58, 138, 0.4);
+  color: #93C5FD;
+  border: 1px solid rgba(147, 197, 253, 0.3);
+}
+
+.job-deadline-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-crimson);
+}
