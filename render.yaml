@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: garuda-os
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: ""
+    startCommand: node --experimental-sqlite server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 22.11.0
+      - key: DB_CONNECTION
+        value: ./data/garuda.db
+      - key: JWT_SECRET
+        generateValue: true

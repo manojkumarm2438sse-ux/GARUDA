@@ -1,0 +1,23 @@
+{
+  "name": "garuda-os",
+  "version": "1.0.0",
+  "description": "GARUDA 🇮🇳 - Personal AI Mentor & Life Operating System for UPSC & Defence Aspirants",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --experimental-sqlite server.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "keywords": [
+    "pwa",
+    "upsc",
+    "army",
+    "ssb",
+    "fitness",
+    "mentor",
+    "operating-system"
+  ],
+  "author": "Manoj",
+  "license": "MIT"
+}
