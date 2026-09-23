@@ -11,6 +11,8 @@ const STATIC_ASSETS = [
   './css/modules.css',
   './css/responsive.css',
   './js/app.js',
+  './js/auth.js',
+  './js/auth-views.js',
   './js/store.js',
   './js/ai-mentor.js',
   './js/schedule.js',
