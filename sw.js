@@ -30,6 +30,8 @@ const STATIC_ASSETS = [
   './js/data/fitness-data.js',
   './js/data/it-data.js',
   './js/data/jobs-data.js',
+  './assets/icons/icon-192.png',
+  './assets/icons/icon-512.png',
   './assets/icons/garuda_icon.jpg',
   './assets/images/hero_banner.jpg'
 ];
@@ -38,7 +40,9 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[GARUDA SW] Pre-caching offline assets');
-      return cache.addAll(STATIC_ASSETS);
+      return Promise.allSettled(
+        STATIC_ASSETS.map((url) => cache.add(url).catch((err) => console.warn('[GARUDA SW] Pre-cache skip:', url, err)))
+      );
     }).then(() => self.skipWaiting())
   );
 });

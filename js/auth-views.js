@@ -39,6 +39,18 @@ export function renderLoginView(container, onLoginSuccess) {
           <span class="badge badge-strong">SECURE</span>
         </div>
 
+        <!-- Install App to Home Screen Banner -->
+        <div id="btn-login-install-app" style="margin-bottom: 1rem; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: var(--radius-md); padding: 0.65rem 0.85rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <span style="font-size: 1.3rem;">📲</span>
+            <div>
+              <div style="font-size: 0.82rem; font-weight: 700; color: #38BDF8;">INSTALL APP TO HOME SCREEN</div>
+              <div style="font-size: 0.7rem; color: var(--text-secondary);">One-tap offline PWA for Android & iPhone</div>
+            </div>
+          </div>
+          <span class="btn btn-outline btn-sm" style="font-size: 0.72rem; padding: 0.2rem 0.55rem; border-color: #38BDF8; color: #38BDF8;">Install →</span>
+        </div>
+
         <!-- Quick 1-Click Demo Login Box -->
         <div class="card" style="background: rgba(245, 158, 11, 0.06); border: 1px dashed var(--accent-gold); padding: 0.85rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
           <div>
@@ -124,6 +136,11 @@ export function renderLoginView(container, onLoginSuccess) {
       }
     });
   }
+
+  // Attach Install App Trigger
+  container.querySelector('#btn-login-install-app')?.addEventListener('click', () => {
+    document.getElementById('btn-pwa-install')?.click();
+  });
 
   // Handle Form Submit
   const form = container.querySelector('#form-login');

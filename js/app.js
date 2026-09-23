@@ -82,25 +82,45 @@ class GarudaApp {
     }
 
     const installBtn = document.getElementById('btn-pwa-install');
+    const modalInstall = document.getElementById('modal-pwa-install');
+    const nativeBtn = document.getElementById('btn-trigger-native-install');
+    const closeBtn = document.getElementById('btn-close-pwa-install');
+    const dismissBtn = document.getElementById('btn-dismiss-pwa-install');
+
+    const openModal = () => {
+      if (modalInstall) modalInstall.classList.add('open');
+    };
+    const closeModal = () => {
+      if (modalInstall) modalInstall.classList.remove('open');
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (dismissBtn) dismissBtn.addEventListener('click', closeModal);
+
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       this.deferredPrompt = e;
-      if (installBtn) {
-        installBtn.style.display = 'inline-flex';
-        installBtn.addEventListener('click', () => {
-          if (this.deferredPrompt) {
-            this.deferredPrompt.prompt();
-            this.deferredPrompt.userChoice.then((choiceResult) => {
-              if (choiceResult.outcome === 'accepted') {
-                console.log('[GARUDA] PWA install accepted');
-              }
-              this.deferredPrompt = null;
-              installBtn.style.display = 'none';
-            });
-          }
-        });
-      }
+      if (installBtn) installBtn.style.display = 'inline-flex';
+      if (nativeBtn) nativeBtn.style.display = 'block';
     });
+
+    const triggerInstall = () => {
+      if (this.deferredPrompt) {
+        this.deferredPrompt.prompt();
+        this.deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('[GARUDA] PWA install accepted');
+          }
+          this.deferredPrompt = null;
+          closeModal();
+        });
+      } else {
+        openModal();
+      }
+    };
+
+    if (installBtn) installBtn.addEventListener('click', triggerInstall);
+    if (nativeBtn) nativeBtn.addEventListener('click', triggerInstall);
   }
 
   // Tactical Dark / Daylight Theme Engine

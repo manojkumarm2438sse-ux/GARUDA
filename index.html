@@ -12,8 +12,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="GARUDA OS">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" type="image/jpeg" href="./assets/icons/garuda_icon.jpg">
-  <link rel="apple-touch-icon" href="./assets/icons/garuda_icon.jpg">
+  <link rel="icon" type="image/png" href="./assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
 
   <!-- Google Fonts: Inter & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,8 +70,8 @@
           ⚙️
         </button>
 
-        <button class="header-btn" id="btn-pwa-install" style="display: none;" title="Install GARUDA PWA to Home Screen">
-          📥
+        <button class="header-btn" id="btn-pwa-install" title="Install GARUDA App to Mobile or Desktop">
+          📲
         </button>
       </div>
     </header>
@@ -234,6 +234,62 @@
           <button class="header-btn" id="btn-close-auth">&times;</button>
         </div>
         <div class="modal-body" id="modal-auth-body"></div>
+      </div>
+    </div>
+
+    <!-- PWA Install Guide Modal -->
+    <div id="modal-pwa-install" class="modal-overlay">
+      <div class="modal-sheet" style="max-width: 480px;">
+        <div class="modal-header">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.5rem;">📲</span>
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--accent-gold);">Install GARUDA App</h3>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">Mobile & Desktop Progressive Web App</span>
+            </div>
+          </div>
+          <button class="header-btn" id="btn-close-pwa-install">&times;</button>
+        </div>
+        <div class="modal-body" style="padding: 1rem 0;">
+          <div style="text-align: center; margin-bottom: 1.25rem;">
+            <img src="./assets/icons/icon-192.png" alt="GARUDA Icon" style="width: 72px; height: 72px; border-radius: 18px; margin-bottom: 0.5rem; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 2px solid var(--accent-gold);">
+            <div style="font-weight: 800; font-size: 1.15rem;">GARUDA <span style="font-size: 1rem;">🇮🇳</span></div>
+            <div style="font-size: 0.8rem; color: var(--text-secondary);">Officer Preparation Coach & Life Operating System</div>
+          </div>
+
+          <!-- Chrome/Edge 1-Click Install Button if supported -->
+          <div id="pwa-native-prompt-container" style="margin-bottom: 1.25rem;">
+            <button class="btn btn-primary" id="btn-trigger-native-install" style="width: 100%; padding: 0.85rem; font-size: 0.95rem; font-weight: 800;">
+              ⚡ Install to Home Screen Now
+            </button>
+          </div>
+
+          <!-- Manual Step by Step for Android & iOS -->
+          <div class="card" style="margin-bottom: 0.75rem; background: var(--bg-surface); border-left: 3px solid #86EFAC;">
+            <div style="font-weight: 700; font-size: 0.88rem; color: #86EFAC; margin-bottom: 0.35rem;">
+              🤖 Android (Google Chrome / Brave)
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">
+              1. Tap the <strong>three dots (⋮)</strong> in the top-right corner of Chrome.<br>
+              2. Tap <strong>"Install app"</strong> or <strong>"Add to Home screen"</strong>.<br>
+              3. Tap <strong>Install</strong> to confirm.
+            </div>
+          </div>
+
+          <div class="card" style="margin-bottom: 0; background: var(--bg-surface); border-left: 3px solid #38BDF8;">
+            <div style="font-weight: 700; font-size: 0.88rem; color: #38BDF8; margin-bottom: 0.35rem;">
+              🍏 iPhone / iPad (Safari)
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">
+              1. Tap the <strong>Share button (⎙)</strong> at the bottom of Safari.<br>
+              2. Scroll down and tap <strong>"Add to Home Screen"</strong>.<br>
+              3. Tap <strong>Add</strong> in the top right corner.
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline btn-sm" id="btn-dismiss-pwa-install">Close</button>
+        </div>
       </div>
     </div>
   </div>
